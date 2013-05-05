@@ -23,6 +23,8 @@
 		6F12E782173622D5007A38DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F12E75D173622D4007A38DA /* Foundation.framework */; };
 		6F12E78A173622D5007A38DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6F12E788173622D5007A38DA /* InfoPlist.strings */; };
 		6F12E78D173622D5007A38DA /* MatchismoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F12E78C173622D5007A38DA /* MatchismoTests.m */; };
+		6F12E79E173623C8007A38DA /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F12E79D173623C8007A38DA /* Card.m */; };
+		6F12E79F173623C8007A38DA /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F12E79D173623C8007A38DA /* Card.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		6F12E789173622D5007A38DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6F12E78B173622D5007A38DA /* MatchismoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatchismoTests.h; sourceTree = "<group>"; };
 		6F12E78C173622D5007A38DA /* MatchismoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchismoTests.m; sourceTree = "<group>"; };
+		6F12E79C173623C8007A38DA /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		6F12E79D173623C8007A38DA /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,7 @@
 		6F12E761173622D4007A38DA /* Matchismo */ = {
 			isa = PBXGroup;
 			children = (
+				6F12E79B173623C8007A38DA /* Model */,
 				6F12E76A173622D4007A38DA /* AppDelegate.h */,
 				6F12E76B173622D4007A38DA /* AppDelegate.m */,
 				6F12E773173622D4007A38DA /* MainStoryboard.storyboard */,
@@ -158,6 +163,15 @@
 				6F12E788173622D5007A38DA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6F12E79B173623C8007A38DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6F12E79C173623C8007A38DA /* Card.h */,
+				6F12E79D173623C8007A38DA /* Card.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +287,7 @@
 				6F12E768173622D4007A38DA /* main.m in Sources */,
 				6F12E76C173622D4007A38DA /* AppDelegate.m in Sources */,
 				6F12E778173622D4007A38DA /* ViewController.m in Sources */,
+				6F12E79E173623C8007A38DA /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F12E78D173622D5007A38DA /* MatchismoTests.m in Sources */,
+				6F12E79F173623C8007A38DA /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
