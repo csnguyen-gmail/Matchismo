@@ -12,8 +12,8 @@
 @end
 
 @implementation Card
-@synthesize faceUp = _faceUp;
-@synthesize unplayable = _unplayable;
+@synthesize faceUp = _faceUp;   // because we provide getter & setter
+@synthesize unplayable = _unplayable;   // because we provide getter & setter
 
 - (BOOL)isFaceUp {
     return _faceUp;
@@ -29,6 +29,17 @@
 
 - (void)setUnplayable:(BOOL)unplayable {
     _unplayable = unplayable;
+}
+
+-(int)matchCard:(NSArray *)othersCard {
+    int score = 0;
+    
+    for (Card *card in othersCard) {
+        if ([card.contents isEqualToString:self.contents]) {
+            score = 1;
+        }
+    }
+    return score;
 }
 
 @end
