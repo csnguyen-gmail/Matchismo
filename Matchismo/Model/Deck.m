@@ -10,7 +10,7 @@
 
 
 @interface Deck()
-@property (strong, nonatomic)  NSMutableArray *cards;
+@property (strong, nonatomic)  NSMutableArray *cards; // property value is initialize with nil
 @end
 
 @implementation Deck
@@ -23,16 +23,18 @@
 }
 
 - (void)addCard:(Card *)card atTop:(BOOL)atTop {
-    if (atTop) {
-        [self.card insertObject:card atIndex:0];
-    }
-    else {
-        [self.card addObject:card];
+    if (card != nil) {
+        if (atTop) {
+            [self.card insertObject:card atIndex:0];
+        }
+        else {
+            [self.card addObject:card];
+        }
     }
 }
 
 - (Card*)drawRandomCard {
-    Card *randomCard = nil;
+    Card *randomCard; // local value is initialize with nil
     
     if (self.cards.count) {
         unsigned index = arc4random() % self.cards.count;

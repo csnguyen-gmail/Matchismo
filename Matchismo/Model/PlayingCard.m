@@ -12,6 +12,20 @@
 @synthesize suit = _suit; // because we provide getter & setter
 @synthesize rank = _rank; // because we provide getter & setter
 
+-(int)matchCard:(NSArray *)othersCard {
+    int score = 0;
+    if ([othersCard count] == 1) {
+        PlayingCard *otherCard = [othersCard lastObject];
+        if ([otherCard.suit isEqualToString:self.suit]) {
+            score = 1;
+        }
+        else if (otherCard.rank == self.rank){
+            score = 4;
+        }
+    }
+    return score;
+}
+
 - (NSString *)contents{
     NSArray *rankStrings = [PlayingCard rankStrings];
     return [rankStrings[self.rank] stringByAppendingString:self.suit];
@@ -21,7 +35,7 @@
     return @[@"♥", @"♦", @"♣", @"♠"];
 }
 + (NSArray *)rankStrings {
-    return @[@"?", @"A", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"J", @"Q", @"K"];
+    return @[@"?", @"A", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"J", @"Q", @"K"];
 }
 + (NSUInteger)maxRank {
     return [PlayingCard rankStrings].count - 1;
