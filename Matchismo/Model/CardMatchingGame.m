@@ -50,6 +50,9 @@
 - (Card *)cardAtIndex:(NSUInteger)index {
     return (index < [self.cards count]) ? self.cards[index] : nil;
 }
+-(void) helloWorld{
+    
+}
 - (id)initWithCardCount:(NSUInteger)count usingDeck:(Deck *)deck {
     self = [super init];
     if (self) {

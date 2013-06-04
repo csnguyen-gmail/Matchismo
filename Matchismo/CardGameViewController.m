@@ -53,5 +53,7 @@
     [self updateUI];
 }
 
+- (IBAction)doSomething:(id)sender {
+}
 
 @end
