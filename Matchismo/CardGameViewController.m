@@ -9,6 +9,7 @@
 #import "CardGameViewController.h"
 #import "PlayingCardDeck.h"
 #import "CardMatchingGame.h"
+#import "GameResult.h"
 
 @interface CardGameViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (nonatomic) int flipCount;
 @property (nonatomic, strong) CardMatchingGame *game;
+@property (strong, nonatomic) GameResult *gameResult;
 @end
 
 @implementation CardGameViewController
@@ -26,6 +28,13 @@
     }
     return _game;
 }
+
+- (GameResult *)gameResult
+{
+    if (!_gameResult) _gameResult = [[GameResult alloc] init];
+    return _gameResult;
+}
+
 - (void)setCardButtons:(NSArray *)cardButtons {
     _cardButtons = cardButtons;
     [self updateUI];
@@ -51,9 +60,14 @@
     self.flipCount++;
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     [self updateUI];
+    self.gameResult.score = self.game.score;
+}
+- (IBAction)dealTapped:(id)sender {
+    self.gameResult = nil;
+    self.game = nil;
+    self.flipCount = 0;
+    [self updateUI];
 }
 
-- (IBAction)doSomething:(id)sender {
-}
 
 @end
